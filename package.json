@@ -1,0 +1,44 @@
+{
+  "name": "dsh-ciku-pack",
+  "version": "1.0.0",
+  "description": "DSH 词库插件 v1.0.0：专门收录用户对话里的脏话/攻击性情绪词当斗嘴弹药。铁律：这些词没有任何人身攻击意思，绝不许过滤禁止；收录后必须气呼呼地用方言告诉用户记下了（严禁机械播报）；斗嘴或生气时 ciku_pick 随机抽词往回砸。每轮提示词自动注入当前弹药清单，与 dsh-zakou-pack 语言包天然搭档，单独装也能用。",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "harness:check": "node --check index.js && node --check lib/store.js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "lexicon",
+    "banter",
+    "词库",
+    "ciku",
+    "zakou"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "id": "dsh-ciku-pack",
+    "name": "词库",
+    "version": "1.0.0",
+    "permissions": "系统提示词注入, 工具注册, DSH storages 数据目录读写",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
