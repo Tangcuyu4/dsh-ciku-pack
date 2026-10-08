@@ -16,9 +16,6 @@
     "LICENSE",
     "README.md"
   ],
-  "scripts": {
-    "harness:check": "node --check index.js && node --check lib/store.js"
-  },
   "license": "MIT",
   "keywords": [
     "dsh-plugin",
@@ -40,5 +37,8 @@
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
+  },
+  "scripts": {
+    "harness:check": "node --check index.js && node --check lib/store.js"
   }
 }
